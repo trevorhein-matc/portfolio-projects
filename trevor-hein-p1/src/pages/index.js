@@ -9,6 +9,7 @@ import FruitData from "../data/fruit.json";
 import GrainData from "../data/grain.json";
 import ProteinData from "../data/protein.json";
 import VeggieData from "../data/veggie.json";
+import { Box, Flex, Text } from 'rebass';
 
 
 class IndexPage extends React.Component {
@@ -22,6 +23,21 @@ class IndexPage extends React.Component {
     return (
       <div>
         <div>
+          <Flex>
+            <Box
+              width={1}
+              bg="#004d40"
+            >
+              <Text
+                p={3}
+                fontSize={[ 3, 4, 5 ]}
+                fontWeight='bold'
+                fontFamily='roboto'
+                color='white'>
+                Veggies
+              </Text>
+            </Box>
+          </Flex>
           <GridLayout>
               {VeggieData.map((card) => (
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
@@ -30,6 +46,21 @@ class IndexPage extends React.Component {
                   </Grid>
               ))}
           </GridLayout>
+          <Flex>
+            <Box
+              width={1}
+              bg="#b71c1c"
+            >
+              <Text
+                p={3}
+                fontSize={[ 3, 4, 5 ]}
+                fontWeight='bold'
+                fontFamily='roboto'
+                color='white'>
+                Fruits
+              </Text>
+            </Box>
+          </Flex>
           <GridLayout>
               {FruitData.map((card) => (
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
@@ -38,6 +69,21 @@ class IndexPage extends React.Component {
                   </Grid>
               ))}
           </GridLayout>
+          <Flex>
+            <Box
+              width={1}
+              bg="#f57f17"
+            >
+              <Text
+                p={3}
+                fontSize={[ 3, 4, 5 ]}
+                fontWeight='bold'
+                fontFamily='roboto'
+                color='black'>
+                Grains
+              </Text>
+            </Box>
+          </Flex>
           <GridLayout>
             {GrainData.map((card) => (
               <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
@@ -46,6 +92,21 @@ class IndexPage extends React.Component {
               </Grid>
             ))}
           </GridLayout>
+          <Flex>
+            <Box
+              width={1}
+              bg="#311b92"
+            >
+              <Text
+                p={3}
+                fontSize={[ 3, 4, 5 ]}
+                fontWeight='bold'
+                fontFamily='roboto'
+                color='white'>
+                Protein
+              </Text>
+            </Box>
+          </Flex>
           <GridLayout>
             {ProteinData.map((card) => (
               <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
@@ -54,6 +115,21 @@ class IndexPage extends React.Component {
               </Grid>
             ))}
           </GridLayout>
+          <Flex>
+            <Box
+              width={1}
+              bg="#0d47a1"
+            >
+              <Text
+                p={3}
+                fontSize={[ 3, 4, 5 ]}
+                fontWeight='bold'
+                fontFamily='roboto'
+                color='white'>
+                Dairy
+              </Text>
+            </Box>
+          </Flex>
           <GridLayout>
               {DairyData.map((card) => (
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>

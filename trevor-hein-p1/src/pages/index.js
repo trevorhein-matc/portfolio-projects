@@ -3,7 +3,12 @@ import React from "react"
 import GridLayout from '../components/GridLayout';
 import Grid from '@material-ui/core/Grid';
 import IngredientCard from "../components/IngredientCard";
-import IngredientData from "../data/ingredients.json";
+// import IngredientData from "../data/ingredients.json";
+import DairyData from "../data/dairy.json";
+import FruitData from "../data/fruit.json";
+import GrainData from "../data/grain.json";
+import ProteinData from "../data/protein.json";
+import VeggieData from "../data/veggie.json";
 
 
 class IndexPage extends React.Component {
@@ -18,7 +23,39 @@ class IndexPage extends React.Component {
       <div>
         <div>
           <GridLayout>
-              {IngredientData.map((card) => (
+              {VeggieData.map((card) => (
+                  <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
+                      <IngredientCard data={card}>
+                      </IngredientCard>
+                  </Grid>
+              ))}
+          </GridLayout>
+          <GridLayout>
+              {FruitData.map((card) => (
+                  <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
+                      <IngredientCard data={card}>
+                      </IngredientCard>
+                  </Grid>
+              ))}
+          </GridLayout>
+          <GridLayout>
+            {GrainData.map((card) => (
+              <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
+                  <IngredientCard data={card}>
+                  </IngredientCard>
+              </Grid>
+            ))}
+          </GridLayout>
+          <GridLayout>
+            {ProteinData.map((card) => (
+              <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
+                  <IngredientCard data={card}>
+                  </IngredientCard>
+              </Grid>
+            ))}
+          </GridLayout>
+          <GridLayout>
+              {DairyData.map((card) => (
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                       <IngredientCard data={card}>
                       </IngredientCard>

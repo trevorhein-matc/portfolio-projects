@@ -2,21 +2,21 @@
     "id": 1,
     "name": "Bell Pepper",
     "type": "veggie",
-    "image": "../images/ingredientPics/bellPepperBox.jpg",
+    "image": "",
     "inPantry": false
 },
 {
     "id": 2,
     "name": "Broccoli",
     "type": "veggie",
-    "image": "../images/ingredientPics/broccoliBox.jpg",
+    "image": "",
     "inPantry": false
 },
 {
     "id": 3,
     "name": "Carrots",
     "type": "veggie",
-    "image": "../images/ingredientPics/carrotBox.jpg",
+    "image": "",
     "inPantry": false
 },
 {

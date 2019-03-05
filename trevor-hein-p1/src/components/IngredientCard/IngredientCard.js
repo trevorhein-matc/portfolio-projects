@@ -36,8 +36,27 @@ const styles = theme => ({
     }
 });
 
+class IngTypeNumber extends React.Component {
+  render() {
+    return (
+      <button className="ingNumType">
+        {this.props.value}
+      </button>
+    );
+  }
+}
+
 class IngredientCard extends React.Component {
-    state = {
+
+      renderTypeNumber(i) {
+        return (
+          <div>
+            <IngTypeNumber value={i} />
+          </div>
+        )
+      }
+
+      state = {
         expanded: false,
         open: false
       };
@@ -48,7 +67,7 @@ class IngredientCard extends React.Component {
         });
       };
     
-      handleClick = event => {
+      handleClick = () => {
         // this.setState({
         //   open: true
         // });
@@ -68,10 +87,12 @@ class IngredientCard extends React.Component {
         return (
           <div>
             <Card className={classes.card}>
-
+              <div>
+                {this.renderTypeNumber(data.type)}
+              </div>
               <CardActionArea
-                onClick={this.handleClick}
-                data={data}
+                // onClick={this.handleClick}
+                // data={data}
               >
 
                 <CardContent className={classes.noPadding}>

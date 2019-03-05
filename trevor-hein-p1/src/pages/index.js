@@ -12,14 +12,46 @@ import VeggieData from "../data/veggie.json";
 import { Box, Flex, Text } from 'rebass';
 
 
+class IngTypeTally extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.value}
+      </div>
+    )
+  }
+}
+
 class IndexPage extends React.Component {
+
+  veggieTally(i) {
+    return (
+      <div>
+        <IngTypeTally value={i} />
+      </div>
+    )
+  }
+
+
   constructor(props) {
     super(props);
-    this.state = { items: [], text: '' };
+    this.state = {
+      veggieTallyNum: 0, 
+      items: [], 
+      text: '',
+      veggieValue: 0
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
+  addVeggie(type) {
+    this.setState(prevState => {
+      return {veggieValue: type === 'add' ? prevState.veggieValue + 1: prevState.count - 1}
+    });
+  }
+
   render() {
+
     return (
       <div>
         <div>
@@ -34,7 +66,7 @@ class IndexPage extends React.Component {
                 fontWeight='bold'
                 fontFamily='roboto'
                 color='white'>
-                Veggies
+                Veggies: {this.state.veggieValue}
               </Text>
             </Box>
           </Flex>
@@ -43,6 +75,7 @@ class IndexPage extends React.Component {
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                       <IngredientCard data={card}>
                       </IngredientCard>
+                      <input type='button' onClick={this.addVeggie.bind(this, 'add')} value='Have It!' />
                   </Grid>
               ))}
           </GridLayout>

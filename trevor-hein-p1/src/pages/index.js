@@ -25,13 +25,34 @@ class IndexPage extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  addVeggie(type, {card}) {
+  // addVeggie(type) {
+  //   this.setState(prevState => {
+  //     return (
+  //       {veggieValue: type === 'add' ? prevState.veggieValue + 1: prevState.count - 1}
+  //     )
+  //   });
+  // }
+
+  addVeggie() {
     this.setState(prevState => {
       return (
-        {veggieValue: type === 'add' ? prevState.veggieValue + 1: prevState.count - 1},
-        console.log(card.name)
+        {veggieValue: prevState.veggieValue + 1}
       )
     });
+  }
+
+  addVeggieToList({card}) {
+    console.log(card.name);
+  }
+
+  addVeggieTypeToList({card}) {
+    console.log(card.type);
+  }
+
+  handleVeggieCheck = (event, {card}) => {
+    this.addVeggieToList({card});
+    this.addVeggieTypeToList({card});
+    this.addVeggie()
   }
 
   // handleVeggieCheck = changeEvent => {
@@ -65,7 +86,12 @@ class IndexPage extends React.Component {
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                       <IngredientCard data={card}>
                       </IngredientCard>
-                      <input type='button' onClick={this.addVeggie.bind(this, 'add', {card})} value='Have It!' />
+                      <input type='button' onClick={
+                        this.handleVeggieCheck.bind(this, 'add', {card})
+                        // this.veggieWrapper.bind(this, 'add', {card})
+                        // this.addVeggie.bind(this, 'add', {card})
+                        // this.addVeggieToList.bind(this, {card})
+                      } value='Have It!' />
 
                       {/* <label>
                         <input

@@ -11,27 +11,7 @@ import ProteinData from "../data/protein.json";
 import VeggieData from "../data/veggie.json";
 import { Box, Flex, Text } from 'rebass';
 
-
-class IngTypeTally extends React.Component {
-  render() {
-    return (
-      <div>
-        {this.props.value}
-      </div>
-    )
-  }
-}
-
 class IndexPage extends React.Component {
-
-  veggieTally(i) {
-    return (
-      <div>
-        <IngTypeTally value={i} />
-      </div>
-    )
-  }
-
 
   constructor(props) {
     super(props);
@@ -39,16 +19,26 @@ class IndexPage extends React.Component {
       veggieTallyNum: 0, 
       items: [], 
       text: '',
-      veggieValue: 0
+      veggieValue: 0,
+      // selectedOption: "unchecked"
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  addVeggie(type) {
+  addVeggie(type, {card}) {
     this.setState(prevState => {
-      return {veggieValue: type === 'add' ? prevState.veggieValue + 1: prevState.count - 1}
+      return (
+        {veggieValue: type === 'add' ? prevState.veggieValue + 1: prevState.count - 1},
+        console.log(card.name)
+      )
     });
   }
+
+  // handleVeggieCheck = changeEvent => {
+  //   this.setState({
+  //     selectedOption: changeEvent.target.value
+  //   })
+  // }
 
   render() {
 
@@ -75,7 +65,19 @@ class IndexPage extends React.Component {
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                       <IngredientCard data={card}>
                       </IngredientCard>
-                      <input type='button' onClick={this.addVeggie.bind(this, 'add')} value='Have It!' />
+                      <input type='button' onClick={this.addVeggie.bind(this, 'add', {card})} value='Have It!' />
+
+                      {/* <label>
+                        <input
+                          type="radio"
+                          name="veggieCheck"
+                          value="unchecked"
+                          checked={this.state.selectedOption === "unchecked"}
+                          onChange={this.handleVeggieCheck}
+                          className="ingredientCheckBox"
+                        />
+                        Have {card.name}
+                      </label> */}
                   </Grid>
               ))}
           </GridLayout>

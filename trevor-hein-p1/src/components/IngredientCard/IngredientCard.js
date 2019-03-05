@@ -87,9 +87,9 @@ class IngredientCard extends React.Component {
         return (
           <div>
             <Card className={classes.card}>
-              <div>
+              {/* <div>
                 {this.renderTypeNumber(data.type)}
-              </div>
+              </div> */}
               <CardActionArea
                 // onClick={this.handleClick}
                 // data={data}

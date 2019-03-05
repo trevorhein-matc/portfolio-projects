@@ -55,12 +55,6 @@ class IndexPage extends React.Component {
     this.addVeggie()
   }
 
-  // handleVeggieCheck = changeEvent => {
-  //   this.setState({
-  //     selectedOption: changeEvent.target.value
-  //   })
-  // }
-
   render() {
 
     return (

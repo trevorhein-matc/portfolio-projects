@@ -3,21 +3,15 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import classnames from "classnames";
 import Card from "@material-ui/core/Card";
-// import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import Collapse from "@material-ui/core/Collapse";
 import gridTheme from '../../themes/gridTheme';
 import IconButton from "@material-ui/core/IconButton";
-// import Typography from "@material-ui/core/Typography";
-import red from "@material-ui/core/colors/red";
+import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-// import Button from "@material-ui/core/Button";
 import IngredientLabel from "../IngredientCard/IngredientLabel";
 import RecipeImage from "../RecipeCard/RecipeImage";
-
-const dialogText = "Some random filler";
 
 const styles = theme => ({
     media: {
@@ -36,17 +30,6 @@ const styles = theme => ({
     },
     expandOpen: {
         transform: "rotate(180deg)"
-    },
-    avatar: {
-        backgroundColor: red[500]
-    },
-    dialog: {
-        marginTop: -30,
-        marginBottom: -30
-    },
-    dialogContent: {
-        minWidth: "90%",
-        maxWidth: "90%"
     },
     card: {
         [theme.breakpoints.down("xs")]: {
@@ -98,7 +81,9 @@ class RecipeCard extends React.Component {
                 <RecipeImage data={data} />
               </CardContent>
               <CardActions className={classes.actions} disableActionSpacing>
-       
+                <Typography component="h2">
+                    Ingredients
+                </Typography>
                 <IconButton
                   className={classnames(classes.expand, {
                     [classes.expandOpen]: this.state.expanded
@@ -112,7 +97,11 @@ class RecipeCard extends React.Component {
               </CardActions>
               <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
                 <CardContent>
-
+                {data.ingredients.map((ingredient) => (
+                  <Typography paragraph key={ingredient}>
+                    {ingredient}
+                  </Typography>
+                ))} 
                 </CardContent>
               </Collapse>
             </Card>

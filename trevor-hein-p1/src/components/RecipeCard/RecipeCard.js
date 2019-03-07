@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-// import classnames from "classnames";
+import classnames from "classnames";
 import Card from "@material-ui/core/Card";
 // import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-// import CardActions from "@material-ui/core/CardActions";
+import CardActions from "@material-ui/core/CardActions";
 import CardActionArea from "@material-ui/core/CardActionArea";
-// import Collapse from "@material-ui/core/Collapse";
+import Collapse from "@material-ui/core/Collapse";
 import gridTheme from '../../themes/gridTheme';
-// import IconButton from "@material-ui/core/IconButton";
+import IconButton from "@material-ui/core/IconButton";
 // import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
-// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import Button from "@material-ui/core/Button";
-
+import IngredientLabel from "../IngredientCard/IngredientLabel";
 import RecipeImage from "../RecipeCard/RecipeImage";
 
 const dialogText = "Some random filler";
@@ -32,10 +32,7 @@ const styles = theme => ({
         transition: theme.transitions.create("transform", {
         duration: theme.transitions.duration.shortest
         }),
-        marginLeft: "auto",
-        [theme.breakpoints.up("xs")]: {
-        // marginRight: -8
-        }
+        marginLeft: "auto"
     },
     expandOpen: {
         transform: "rotate(180deg)"
@@ -56,13 +53,7 @@ const styles = theme => ({
           maxWidth: 250,
           marginLeft: "auto",
           marginRight: "auto"
-        },
-        // [theme.breakpoints.down("sm")]: {
-        //   maxWidth: 400,
-        //   marginLeft: "auto",
-        //   marginRight: "auto"
-        // }
-        // margin: 12,
+        }
     },
     noPadding: {
       padding: 0,
@@ -75,10 +66,6 @@ class RecipeCard extends React.Component {
         open: false
       };
 
-      // constructor(props) {
-      //   super(props);
-      //   console.log(this.props);
-      // }
 
       handleClose = () => {
         this.setState({
@@ -104,20 +91,14 @@ class RecipeCard extends React.Component {
         return (
           <div>
             <Card className={classes.card}>
-
+              <IngredientLabel>
+                {data.name}
+              </IngredientLabel>
               <CardContent className= {classes.noPadding} >
                 <RecipeImage data={data} />
               </CardContent>
-              {/* <CardActions className={classes.actions} disableActionSpacing>
-    
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={this.handleClick}
-                >
-                  Click here
-                </Button>
-    
+              <CardActions className={classes.actions} disableActionSpacing>
+       
                 <IconButton
                   className={classnames(classes.expand, {
                     [classes.expandOpen]: this.state.expanded
@@ -133,7 +114,7 @@ class RecipeCard extends React.Component {
                 <CardContent>
 
                 </CardContent>
-              </Collapse> */}
+              </Collapse>
             </Card>
           </div>
         );

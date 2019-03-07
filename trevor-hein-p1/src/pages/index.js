@@ -230,7 +230,7 @@ class IndexPage extends React.Component {
           <Flex>
             <Box
               width={1}
-              bg="#0d47a1"
+              bg="#212121"
             >
               <Text
                 p={3}
@@ -248,14 +248,7 @@ class IndexPage extends React.Component {
                   <RecipeCard data={recipe}>
                   </RecipeCard>
               </Grid>
-            ))}
-            {/* {RecipeData.filter(recipe => recipe.name === "Bacon and Eggs").map(
-              <Grid item xs={4} sm={3} md={2} key={recipe.name} data={recipe}>
-                  <RecipeCard data={recipe}>
-                  </RecipeCard>
-              </Grid>
-            )} */}
-            
+            ))}            
 
           </GridLayout>
         </div>

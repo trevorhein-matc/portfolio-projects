@@ -15,6 +15,8 @@ import red from "@material-ui/core/colors/red";
 // import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import Button from "@material-ui/core/Button";
 
+import RecipeImage from "../RecipeCard/RecipeImage";
+
 const dialogText = "Some random filler";
 
 const styles = theme => ({
@@ -61,6 +63,9 @@ const styles = theme => ({
         //   marginRight: "auto"
         // }
         // margin: 12,
+    },
+    noPadding: {
+      padding: 0,
     }
 });
 
@@ -100,16 +105,9 @@ class RecipeCard extends React.Component {
           <div>
             <Card className={classes.card}>
 
-              <CardActionArea>
-                {/* <CardMedia
-                  className={classes.media}
-                  image={data.name}
-                  title="Sloth!"
-                /> */}
-
-                <CardContent>
-                </CardContent>
-              </CardActionArea>
+              <CardContent className= {classes.noPadding} >
+                <RecipeImage data={data} />
+              </CardContent>
               {/* <CardActions className={classes.actions} disableActionSpacing>
     
                 <Button

@@ -2,357 +2,191 @@ import React from 'react'
 import { Image as ImageBase } from 'rebass'
 
 //Image files
-import appleDip from"../../images/RecipePics/appleDip.jpg";
-import baconAndEggs from"../../images/RecipePics/baconAndEggs.jpg";
-import chickenFingers from"../../images/RecipePics/chickenFingers.jpg";
-import chickenParmesan from"../../images/RecipePics/chickenParmesan.jpg";
-import chickenStirFry from"../../images/RecipePics/chickenStirFry.jpg";
-import chimichurriSauce from"../../images/RecipePics/chimichurriSauce.jpg";
-import guacamole from"../../images/RecipePics/guacamole.jpg";
-import picoDeGallo from"../../images/RecipePics/picoDeGallo.jpg";
-import shrimpAlfredo from"../../images/RecipePics/shrimpAlfredo.jpg";
-import shrimpCeviche from"../../images/RecipePics/shrimpCeviche.jpg";
-import shrimpCurry from"../../images/RecipePics/shrimpCurry.jpg";
-import shrimpSpinachSalad from"../../images/RecipePics/shrimpSpinachSalad.jpg";
-import shrimpTacos from"../../images/RecipePics/shrimpTacos.jpg";
-import sweetSourSandwich from"../../images/RecipePics/sweetSourSandwich.jpg";
-import turkeyBreakfastBurger from"../../images/RecipePics/turkeyBreakfastBurger.jpg";
-import turkeyChili from"../../images/RecipePics/turkeyChili.jpg";
-import turkeySloppyJoes from"../../images/RecipePics/turkeySloppyJoes.jpg";
+import AppleDip from"../../images/RecipePics/appleDip.jpg";
+import BaconAndEggs from"../../images/RecipePics/baconAndEggs.jpg";
+import ChickenFingers from"../../images/RecipePics/chickenFingers.jpg";
+import ChickenParmesan from"../../images/RecipePics/chickenParmesan.jpg";
+import ChickenStirFry from"../../images/RecipePics/chickenStirFry.jpg";
+import ChimichurriSauce from"../../images/RecipePics/chimichurriSauce.jpg";
+import Guacamole from"../../images/RecipePics/guacamole.jpg";
+import PicoDeGallo from"../../images/RecipePics/picoDeGallo.jpg";
+import ShrimpAlfredo from"../../images/RecipePics/shrimpAlfredo.jpg";
+import ShrimpCeviche from"../../images/RecipePics/shrimpCeviche.jpg";
+import ShrimpCurry from"../../images/RecipePics/shrimpCurry.jpg";
+import ShrimpSpinachSalad from"../../images/RecipePics/shrimpSpinachSalad.jpg";
+import ShrimpTacos from"../../images/RecipePics/shrimpTacos.jpg";
+import SweetSourSandwich from"../../images/RecipePics/sweetSourSandwich.jpg";
+import TurkeyBreakfastBurger from"../../images/RecipePics/turkeyBreakfastBurger.jpg";
+import TurkeyChili from"../../images/RecipePics/turkeyChili.jpg";
+import TurkeySloppyJoes from"../../images/RecipePics/turkeySloppyJoes.jpg";
 
 
-function RecipeImage(props) {
-    const ingredient = props.ingredient;
+function RecipePic(props) {
+    const recipe = props.recipe;
     // console.log(props.ingredient)
-    switch (ingredient) {
-        case "Apple":
+    switch (recipe) {
+        case "Apple Dip":
             return (
                 <ImageBase 
-                    src={appleBox}
+                    src={AppleDip}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-        case "Avocado":
+        case "Bacon and Eggs":
             return (
                 <ImageBase 
-                    src={avocadoBox}
+                    src={BaconAndEggs}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-        case "Bacon":
+            case "Chicken Fingers":
             return (
                 <ImageBase 
-                    src={baconBox}
+                    src={ChickenFingers}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-        case "Banana":
+            case "Chicken Parmesan":
             return (
                 <ImageBase 
-                    src={bananaBox}
+                    src={ChickenParmesan}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-        case "Beans":
+            case "Stir Fry":
             return (
                 <ImageBase 
-                    src={beanBox}
+                    src={ChickenStirFry}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-        case "Bread":
+            case "Chimichurri Sauce":
             return (
                 <ImageBase 
-                    src={breadBox}
+                    src={ChimichurriSauce}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Broccoli":
+            case "Guacamole":
             return (
                 <ImageBase 
-                    src={broccoliBox}
+                    src={Guacamole}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Carrots":
+            case "Pico de Gallo":
             return (
                 <ImageBase 
-                    src={carrotBox}
+                    src={PicoDeGallo}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Cheddar Cheese":
+            case "Shrimp Alfredo":
             return (
                 <ImageBase 
-                    src={cheddarBox}
+                    src={ShrimpAlfredo}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Chicken Breast":
+            case "Shrimp Ceviche":
             return (
                 <ImageBase 
-                    src={chickenBox}
+                    src={ShrimpCeviche}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Cilantro":
+            case "Shrimp Curry":
             return (
                 <ImageBase 
-                    src={cilantroBox}
+                    src={ShrimpCurry}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Coconut Milk":
+            case "Shrimp Spinach Salad":
             return (
                 <ImageBase 
-                    src={coconutMilkBox}
+                    src={ShrimpSpinachSalad}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Egg":
+            case "Shrimp Tacos":
             return (
                 <ImageBase 
-                    src={eggBox}
+                    src={ShrimpTacos}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Feta Cheese":
+            case "Sweet Sour Sandwich":
             return (
                 <ImageBase 
-                    src={fetaBox}
+                    src={SweetSourSandwich}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Garlic":
+            case "Turkey Breakfast Burger":
             return (
                 <ImageBase 
-                    src={garlicBox}
+                    src={TurkeyBreakfastBurger}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Graham Crackers":
+            case "Turkey Chili":
             return (
                 <ImageBase 
-                    src={grahamCrackerBox}
+                    src={TurkeyChili}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Greek Yogurt":
+            case "Turkey Sloppy Joe":
             return (
                 <ImageBase 
-                    src={greekYogurtBox}
+                    src={TurkeySloppyJoes}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Jalapeno Pepper":
+            default:
             return (
                 <ImageBase 
-                    src={jalapenoPepperBox}
+                    src={null}
                     my={0}
                     width={[1]}
                     borderRadius={2}
                 />
             );
-            case "Ketchup":
-            return (
-                <ImageBase 
-                    src={ketchupBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Mozzerella Cheese":
-            return (
-                <ImageBase 
-                    src={mozzBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );            
-            case "Lime":
-            return (
-                <ImageBase 
-                    src={limeBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Onion":
-            return (
-                <ImageBase 
-                    src={onionBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Panko":
-            return (
-                <ImageBase 
-                    src={pankoBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Parmesan Cheese":
-            return (
-                <ImageBase 
-                    src={parmBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Peanut Butter":
-            return (
-                <ImageBase 
-                    src={peanutButterBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Penne Pasta":
-            return (
-                <ImageBase 
-                    src={penneBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Potato":
-            return (
-                <ImageBase 
-                    src={potatoBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Rice":
-            return (
-                <ImageBase 
-                    src={riceBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Shrimp":
-            return (
-                <ImageBase 
-                    src={shrimpBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Spaghetti Pasta":
-            return (
-                <ImageBase 
-                    src={spaghettiBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Spinach":
-            return (
-                <ImageBase 
-                    src={spinachBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Sweet Potato":
-            return (
-                <ImageBase 
-                    src={sweetPotatoBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Tomato":
-            return (
-                <ImageBase 
-                    src={tomatoBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Tortilla":
-            return (
-                <ImageBase 
-                    src={tortillaBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Ground Turkey":
-            return (
-                <ImageBase 
-                    src={turkeyBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            );
-            case "Bell Pepper":
-            return (
-                <ImageBase 
-                    src={bellPepperBox}
-                    my={0}
-                    width={[1]}
-                    borderRadius={2}
-                />
-            )
-      default:
-        return (
-            <img src={bellPepperBox} alt={props.ingredient} />
-        );
     }
   }
 
@@ -362,7 +196,7 @@ class RecipeImage extends React.Component {
         const { data } = this.props;
 
         return (
-            <RecipeImage ingredient={data.name} />
+            <RecipePic recipe={data.name} />
         )
     }
 }

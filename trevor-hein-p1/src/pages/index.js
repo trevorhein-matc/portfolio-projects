@@ -17,6 +17,7 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      ingredientList: [],
       items: [], 
       text: '',
       veggieValue: 0,
@@ -25,9 +26,7 @@ class IndexPage extends React.Component {
       proteinValue: 0,
       dairyValue: 0,
       bgColor: "",
-      // selectedOption: "unchecked"
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   addIngredient({card}) {
@@ -64,10 +63,27 @@ class IndexPage extends React.Component {
     console.log(card.type);
   }
 
+  viewIngredientList() {
+    console.log(this.state.ingredientList);
+  }
+
+  ingredientListItem({card}) {
+    const newIngredient = {
+      name: card.name,
+      id: card.id
+    }
+    this.setState(state => ({
+      ingredientList: state.ingredientList.concat(newIngredient)
+    })
+    );
+  }
+
   handleIngredientClick = (event, {card}) => {
     this.addVeggieToList({card});
     this.addVeggieTypeToList({card});
-    this.addIngredient({card})
+    this.addIngredient({card});
+    this.ingredientListItem({card});
+    this.viewIngredientList({card});
   }
 
   render() {
@@ -206,75 +222,36 @@ class IndexPage extends React.Component {
               ))}
           </GridLayout>
 
+          <Flex>
+            <Box
+              width={1}
+              bg="#0d47a1"
+            >
+              <Text
+                p={3}
+                fontSize={[ 3, 4, 5 ]}
+                fontWeight='bold'
+                fontFamily='roboto'
+                color='white'>
+                Recipes:
+              </Text>
+            </Box>
+          </Flex>
           <GridLayout>
-            {RecipeData.map((card) => (
-              <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
-                  <RecipeCard data={card}>
+            {RecipeData.map((recipe) => (
+              <Grid item xs={4} sm={3} md={2} key={recipe.name} data={recipe}>
+                  <RecipeCard data={recipe}>
                   </RecipeCard>
               </Grid>
             ))}
           </GridLayout>
-
         </div>
-        <h3>In Stock</h3>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="new-todo">
-            What needs to be done?
-          </label>
-          <input
-            id="new-todo"
-            onChange={this.handleChange}
-            value={this.state.text}
-          />
-          <button>
-            Add #{this.state.items.length + 1}
-          </button>
-        </form>
       </div>
     );
   }
-
-handleChange(e) {
-  this.setState({ text: e.target.value });
 }
 
-handleClick(data) {
-  console.log("Grid")
-}
 
-// ingredientListItem(e) {
-//   e.preventDefault();
-//   if ()
-// }
-
-handleSubmit(e) {
-  e.preventDefault();
-  if (!this.state.text.length) {
-    return;
-  }
-  const newItem = {
-    text: this.state.text,
-    id: Date.now()
-  };
-  this.setState(state => ({
-    items: state.items.concat(newItem),
-    text: ''
-  }));
-}
-}
-
-class TodoList extends React.Component {
-render() {
-  return (
-    <ul>
-      {this.props.items.map(item => (
-        <li key={item.id}>{item.text}</li>
-      ))}
-    </ul>
-  );
-}
-}
 
 export default IndexPage;
 

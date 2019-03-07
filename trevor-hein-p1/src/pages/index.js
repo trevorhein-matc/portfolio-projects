@@ -33,7 +33,7 @@ class IndexPage extends React.Component {
     this.setState(prevState => {
       if (card.type === "veggie") {
         return (
-          { veggieValue: prevState.fruitValue + 1 }
+          { veggieValue: prevState.veggieValue + 1 }
         )
       } else if (card.type === "fruit") {
         return (

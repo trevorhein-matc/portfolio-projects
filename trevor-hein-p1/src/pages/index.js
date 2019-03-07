@@ -1,5 +1,5 @@
 import React from "react"
-// import RecipeCard from '../components/RecipeCard/RecipeCard'
+import RecipeCard from '../components/RecipeCard/RecipeCard'
 import GridLayout from '../components/GridLayout';
 import Grid from '@material-ui/core/Grid';
 import IngredientCard from "../components/IngredientCard";
@@ -55,38 +55,6 @@ class IndexPage extends React.Component {
       }
     });
   }
-
-  // addVeggie() {
-  //   this.setState(prevState => {
-  //     return (
-  //       { fruitValue: prevState.veggieValue + 1 }
-  //     )
-  //   });
-  // }
-
-  // addFruit() {
-  //   this.setState(prevState => {
-  //     return (
-  //       { fruitValue: prevState.fruitValue + 1 }
-  //     )
-  //   });
-  // }
-
-  // addGrain() {
-  //   this.setState(prevState => {
-  //     return (
-  //       { fruitValue: prevState.grainValue + 1 }
-  //     )
-  //   });
-  // }
-
-  // addProtein() {
-  //   this.setState(prevState => {
-  //     return (
-  //       { fruitValue: prevState.grainValue + 1 }
-  //     )
-  //   });
-  // }
 
   addVeggieToList({card}) {
     console.log(card.name);
@@ -237,6 +205,16 @@ class IndexPage extends React.Component {
                   </Grid>
               ))}
           </GridLayout>
+
+          <GridLayout>
+            {RecipeData.map((card) => (
+              <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
+                  <RecipeCard data={card}>
+                  </RecipeCard>
+              </Grid>
+            ))}
+          </GridLayout>
+
         </div>
         <h3>In Stock</h3>
         <TodoList items={this.state.items} />
@@ -264,6 +242,11 @@ handleChange(e) {
 handleClick(data) {
   console.log("Grid")
 }
+
+// ingredientListItem(e) {
+//   e.preventDefault();
+//   if ()
+// }
 
 handleSubmit(e) {
   e.preventDefault();

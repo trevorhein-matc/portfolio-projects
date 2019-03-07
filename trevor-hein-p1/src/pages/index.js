@@ -77,6 +77,11 @@ class IndexPage extends React.Component {
     })
     );
   }
+  
+  recipeFilter() {
+
+  }
+
 
   handleIngredientClick = (event, {card}) => {
     this.addVeggieToList({card});
@@ -244,6 +249,14 @@ class IndexPage extends React.Component {
                   </RecipeCard>
               </Grid>
             ))}
+            {/* {RecipeData.filter(recipe => recipe.name === "Bacon and Eggs").map(
+              <Grid item xs={4} sm={3} md={2} key={recipe.name} data={recipe}>
+                  <RecipeCard data={recipe}>
+                  </RecipeCard>
+              </Grid>
+            )} */}
+            
+
           </GridLayout>
         </div>
       </div>

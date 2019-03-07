@@ -4,6 +4,7 @@ import GridLayout from '../components/GridLayout';
 import Grid from '@material-ui/core/Grid';
 import IngredientCard from "../components/IngredientCard";
 // import IngredientData from "../data/ingredients.json";
+import RecipeData from "../data/recipes.json";
 import DairyData from "../data/dairy.json";
 import FruitData from "../data/fruit.json";
 import GrainData from "../data/grain.json";
@@ -16,30 +17,76 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      veggieTallyNum: 0, 
       items: [], 
       text: '',
       veggieValue: 0,
+      fruitValue: 0,
+      grainValue: 0,
+      proteinValue: 0,
+      dairyValue: 0,
+      bgColor: "",
       // selectedOption: "unchecked"
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // addVeggie(type) {
+  addIngredient({card}) {
+    this.setState(prevState => {
+      if (card.type === "veggie") {
+        return (
+          { veggieValue: prevState.fruitValue + 1 }
+        )
+      } else if (card.type === "fruit") {
+        return (
+          { fruitValue: prevState.fruitValue + 1 }
+        )
+      } else if (card.type === "grain") {
+        return (
+          { grainValue: prevState.grainValue + 1 }
+        )
+      } else if (card.type === "protein") {
+        return (
+          { proteinValue: prevState.proteinValue + 1 }
+        )
+      } else if (card.type === "dairy") {
+        return (
+          { dairyValue: prevState.dairyValue + 1 }
+        )
+      }
+    });
+  }
+
+  // addVeggie() {
   //   this.setState(prevState => {
   //     return (
-  //       {veggieValue: type === 'add' ? prevState.veggieValue + 1: prevState.count - 1}
+  //       { fruitValue: prevState.veggieValue + 1 }
   //     )
   //   });
   // }
 
-  addVeggie() {
-    this.setState(prevState => {
-      return (
-        {veggieValue: prevState.veggieValue + 1}
-      )
-    });
-  }
+  // addFruit() {
+  //   this.setState(prevState => {
+  //     return (
+  //       { fruitValue: prevState.fruitValue + 1 }
+  //     )
+  //   });
+  // }
+
+  // addGrain() {
+  //   this.setState(prevState => {
+  //     return (
+  //       { fruitValue: prevState.grainValue + 1 }
+  //     )
+  //   });
+  // }
+
+  // addProtein() {
+  //   this.setState(prevState => {
+  //     return (
+  //       { fruitValue: prevState.grainValue + 1 }
+  //     )
+  //   });
+  // }
 
   addVeggieToList({card}) {
     console.log(card.name);
@@ -49,10 +96,10 @@ class IndexPage extends React.Component {
     console.log(card.type);
   }
 
-  handleVeggieCheck = (event, {card}) => {
+  handleIngredientClick = (event, {card}) => {
     this.addVeggieToList({card});
     this.addVeggieTypeToList({card});
-    this.addVeggie()
+    this.addIngredient({card})
   }
 
   render() {
@@ -71,7 +118,7 @@ class IndexPage extends React.Component {
                 fontWeight='bold'
                 fontFamily='roboto'
                 color='white'>
-                Veggies: {this.state.veggieValue}
+                Veggies: { this.state.veggieValue }
               </Text>
             </Box>
           </Flex>
@@ -81,23 +128,8 @@ class IndexPage extends React.Component {
                       <IngredientCard data={card}>
                       </IngredientCard>
                       <input type='button' onClick={
-                        this.handleVeggieCheck.bind(this, 'add', {card})
-                        // this.veggieWrapper.bind(this, 'add', {card})
-                        // this.addVeggie.bind(this, 'add', {card})
-                        // this.addVeggieToList.bind(this, {card})
+                        this.handleIngredientClick.bind(this, 'add', {card})
                       } value='Have It!' />
-
-                      {/* <label>
-                        <input
-                          type="radio"
-                          name="veggieCheck"
-                          value="unchecked"
-                          checked={this.state.selectedOption === "unchecked"}
-                          onChange={this.handleVeggieCheck}
-                          className="ingredientCheckBox"
-                        />
-                        Have {card.name}
-                      </label> */}
                   </Grid>
               ))}
           </GridLayout>
@@ -112,7 +144,7 @@ class IndexPage extends React.Component {
                 fontWeight='bold'
                 fontFamily='roboto'
                 color='white'>
-                Fruits
+                Fruits: { this.state.fruitValue }
               </Text>
             </Box>
           </Flex>
@@ -121,6 +153,9 @@ class IndexPage extends React.Component {
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                       <IngredientCard data={card}>
                       </IngredientCard>
+                      <input type='button' onClick={
+                        this.handleIngredientClick.bind(this, 'add', {card})
+                      } value='Have It!' />
                   </Grid>
               ))}
           </GridLayout>
@@ -135,7 +170,7 @@ class IndexPage extends React.Component {
                 fontWeight='bold'
                 fontFamily='roboto'
                 color='black'>
-                Grains
+                Grains: { this.state.grainValue }
               </Text>
             </Box>
           </Flex>
@@ -144,6 +179,9 @@ class IndexPage extends React.Component {
               <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                   <IngredientCard data={card}>
                   </IngredientCard>
+                  <input type='button' onClick={
+                    this.handleIngredientClick.bind(this, 'add', {card})
+                  } value='Have It!' />
               </Grid>
             ))}
           </GridLayout>
@@ -158,7 +196,7 @@ class IndexPage extends React.Component {
                 fontWeight='bold'
                 fontFamily='roboto'
                 color='white'>
-                Protein
+                Protein: { this.state.proteinValue }
               </Text>
             </Box>
           </Flex>
@@ -167,6 +205,9 @@ class IndexPage extends React.Component {
               <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                   <IngredientCard data={card}>
                   </IngredientCard>
+                  <input type='button' onClick={
+                    this.handleIngredientClick.bind(this, 'add', {card})
+                  } value='Have It!' />
               </Grid>
             ))}
           </GridLayout>
@@ -181,7 +222,7 @@ class IndexPage extends React.Component {
                 fontWeight='bold'
                 fontFamily='roboto'
                 color='white'>
-                Dairy
+                Dairy: { this.state.dairyValue }
               </Text>
             </Box>
           </Flex>
@@ -190,6 +231,9 @@ class IndexPage extends React.Component {
                   <Grid item xs={3} sm={2} md={1} key={card.name} data={card}>
                       <IngredientCard data={card}>
                       </IngredientCard>
+                      <input type='button' onClick={
+                        this.handleIngredientClick.bind(this, 'add', {card})
+                      } value='Have It!' />
                   </Grid>
               ))}
           </GridLayout>

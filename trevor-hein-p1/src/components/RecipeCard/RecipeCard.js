@@ -46,29 +46,14 @@ const styles = theme => ({
 class RecipeCard extends React.Component {
     state = {
         expanded: false,
-        open: false
       };
 
-
-      handleClose = () => {
-        this.setState({
-          open: false
-        });
-      };
-    
-      handleClick = () => {
-        this.setState({
-          open: true
-        });
-      };
-    
       handleExpandClick = () => {
         this.setState(state => ({ expanded: !state.expanded }));
       };
     
       render() {
         const { classes } = this.props;
-        const { open } = this.state;
         const { data } = this.props;
     
         return (

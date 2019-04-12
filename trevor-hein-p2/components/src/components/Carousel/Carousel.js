@@ -36,11 +36,6 @@ const carouselSlides = [
         title: 'Slide 4',
         text: 'This is sample text for slide 4.'
     },
-    {
-        name: 'carousel5',
-        title: 'Slide 5',
-        text: 'This is sample text for slide 5.'
-    },
 ];
 
 const styles = theme => ({
@@ -88,9 +83,9 @@ class Carousel extends React.Component {
 
         return (
             <div className={classes.root}>
-                <Paper square elevation={0} className={classes.header}>
+                {/* <Paper square elevation={0} className={classes.header}>
                     <Typography>{carouselSlides[activeSlide].name}</Typography>
-                </Paper>
+                </Paper> */}
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={activeSlide}

@@ -15,9 +15,8 @@ import { Link } from 'gatsby';
 import InfoIcon from "@material-ui/icons/Info";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
+import StoreIcon from "@material-ui/icons/Store";
 import CollectionsBookmark from "@material-ui/icons/CollectionsBookmark";
-import FindInPage from "@material-ui/icons/FindInPage";
-import Extension from "@material-ui/icons/Extension";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
@@ -25,7 +24,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import 'typeface-roboto';
 
-const drawerWidth = 250;
+const drawerWidth = 200;
 
 const styles = theme => ({
     root: {
@@ -66,22 +65,10 @@ const styles = theme => ({
 function ChooseIcon(props) {
   const iconChoice = props.iconChoice;
   switch (iconChoice) {
-    case "story":
+    case "products":
       return (
         <div>
-          <CollectionsBookmark />
-        </div>
-      );
-    case "piece":
-      return (
-        <div>
-          <Extension />
-        </div>
-      );
-    case "bits":
-      return (
-        <div>
-          <FindInPage />
+          <StoreIcon />
         </div>
       );
     case "sources":
@@ -129,8 +116,8 @@ class NavBar extends React.Component {
         <Divider />
         <List>
           {[
-            { text: "Store", icon: "story", link: '/products' },
-            { text: "About", icon: "about", link: '/about' },
+            { text: "Products", icon: "products", link: '/products' },
+            { text: "Information", icon: "about", link: '/about' },
             { text: "Contact Us", icon: "contact", link: '/contact' }
           ].map((text, index) => (
             <ListItem button key={index} component={ Link } to={text.link}>

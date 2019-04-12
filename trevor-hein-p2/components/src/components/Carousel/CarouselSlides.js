@@ -1,15 +1,9 @@
 import React from 'react'
-import { Image as ImageBase } from 'rebass'
 import { Flex, Box, Card, Heading } from 'rebass'
-import Typography from '@material-ui/core/Typography'
-import BackgroundImage from 'rebass'
 import { withStyles } from '@material-ui/core/styles'
 
-import mjPic1 from "../../images/JumbotronPics/mj1.jpg";
-import mjPic2 from "../../images/JumbotronPics/mj2.jpg";
-import mjPic3 from "../../images/JumbotronPics/mj3.jpg";
-import mjPic4 from "../../images/JumbotronPics/mj4.jpg";
-import mjPic5 from "../../images/JumbotronPics/mj5.jpg";
+// keep Typography for possible text changes later
+// import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
     root: {
@@ -44,14 +38,64 @@ function ImagePicker(props) {
                     bg='orange'
                 >
                     <Box
-                        my={0}
+                        mt={['-12em', '-13em', '-20em']}
                         p={2}
-                        width={[ 3/4, 1/2, 1/4 ]}
+                        width={[ 3/4, 1/2, 1/2 ]}
                         bg="hsla(0, 0%, 0%, 0.34)" 
-                        // css={{
-                        //     marginTop: '-14em',
-                        //     marginLeft: '1em',
-                        // }}
+                    >
+                        <Heading
+                            textAlign='center'
+                            fontSize={[4, 5, 6]}
+                            >
+                            Welcome to the Twisted Leaf
+                        </Heading>
+                    </Box>
+                </Card>
+            );
+        case "carousel2":
+            return (
+                <Card
+                    p={1}
+                    py={[7, 7, 8]}
+                    width={[1, 1, 1]}
+                    backgroundImage='url(https://www.gannett-cdn.com/-mm-/dc8c471a194a6e11d95130f1cf23c3262647d422/c=0-54-580-380/local/-/media/2019/01/17/USATODAY/usatsports/MotleyFool-TMOT-61d3e8b8-3bdcf30d.jpg?width=3200&height=1680&fit=crop)'
+                    backgroundSize='cover'
+                    backgroundPosition='center'
+                    color='white'
+                    bg='orange'
+                >
+                    <Box
+                        mt={['-12em', '-13em', '-20em']}
+                        p={2}
+                        width={[ 3/4, 1/2, 1/2 ]}
+                        bg="hsla(0, 0%, 0%, 0.34)" 
+                    >
+                        <Heading
+                            textAlign='center'
+                            fontSize={[4, 5, 6]}
+                            >
+                            Put your mind at ease with our Q&A
+                        </Heading>
+                    </Box>
+                </Card>
+            );
+        case "carousel3":
+            return (
+                <Card
+                    p={1}
+                    py={[7, 7, 8]}
+                    width={[1, 1, 1]}
+                    backgroundImage='url(https://media.wired.com/photos/5be0db79ec3a5f54b04d33b2/master/pass/marijuana-1036610200.jpg)'
+                    backgroundSize='cover'
+                    backgroundPosition='center'
+                    color='white'
+                    bg='orange'
+                >
+                    <Box
+                        mt={['-12em', '-13em', '-20em']}
+                        p={2}
+                        width={[ 3/4, 1/2, 1/2 ]}
+                        bg="hsla(0, 0%, 0%, 0.34)" 
                     >
                         <Heading
                             textAlign='center'
@@ -62,73 +106,37 @@ function ImagePicker(props) {
                     </Box>
                 </Card>
             );
-        case "carousel2":
-            return (
-                <Card
-                    p={5}
-                    py={[8, 7, 8]}
-                    width={[1, 1, 1]}
-                    backgroundImage='url(https://www.gannett-cdn.com/-mm-/dc8c471a194a6e11d95130f1cf23c3262647d422/c=0-54-580-380/local/-/media/2019/01/17/USATODAY/usatsports/MotleyFool-TMOT-61d3e8b8-3bdcf30d.jpg?width=3200&height=1680&fit=crop)'
-                    backgroundSize='cover'
-                    color='white'
-                    bg='orange'
-                    backgroundPosition='center'
-
-                >
-                </Card>
-            );
-        case "carousel3":
-            return (
-                <Card
-                    p={5}
-                    py={[8, 7, 8]}
-                    width={[1, 1, 1]}
-                    backgroundImage='url(https://media.wired.com/photos/5be0db79ec3a5f54b04d33b2/master/pass/marijuana-1036610200.jpg)'
-                    backgroundSize='cover'
-                    color='white'
-                    bg='orange'
-                    backgroundPosition='center'
-
-                >
-                </Card>
-            );
         case "carousel4":
             return (
                 <Card
-                    p={5}
-                    py={[8, 7, 8]}
+                    p={1}
+                    py={[7, 7, 8]}
                     width={[1, 1, 1]}
                     backgroundImage='url(https://www.rollingstone.com/wp-content/uploads/2018/07/oregon-has-too-much-weed.jpg?crop=900:600&width=440)'
                     backgroundSize='cover'
+                    backgroundPosition='center'
                     color='white'
                     bg='orange'
-                    backgroundPosition='center'
-
                 >
-                </Card>
-            );
-        case "carousel5":
-            return (
-                 <Card
-                    p={5}
-                    py={[8, 7, 8]}
-                    width={[1, 1, 1]}
-                    backgroundImage='url(https://www.denverpost.com/wp-content/uploads/2016/12/ap16351816800464.jpg)'
-                    backgroundSize='cover'
-                    color='white'
-                    bg='orange'
-                    backgroundPosition='center'
-                >
+                    <Box
+                        mt={['-12em', '-13em', '-20em']}
+                        p={2}
+                        width={[ 3/4, 1/2, 1/2 ]}
+                        bg="hsla(0, 0%, 0%, 0.34)" 
+                    >
+                        <Heading
+                            textAlign='center'
+                            fontSize={[4, 5, 6]}
+                            >
+                            Check out our products
+                        </Heading>
+                    </Box>
                 </Card>
             );
         default:
             return (
-                <ImageBase 
-                    src={mjPic2}
-                    my={0}
-                    width={[1, 1, 1]}
-                    borderRadius={2}
-                    height='100%'
+                <Box
+                    bg='blue'
                 />
             )
     }

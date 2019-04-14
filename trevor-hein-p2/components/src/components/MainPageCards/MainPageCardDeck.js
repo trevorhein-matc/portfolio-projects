@@ -15,7 +15,7 @@ class MainPageCardDeck extends React.Component {
             <div>
                 <GridLayout>
                     {cardData.map((data, index)=> (
-                        <Grid item xs={12} sm={6} md={4}>
+                        <Grid item xs={12} sm={6} md={4} key={data.title}>
                             <MainCard data={data}>
                             </MainCard>
                         </Grid>

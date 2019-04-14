@@ -1,14 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-// import MobileStepper from '@material-ui/core/MobileStepper'
-import Typography from '@material-ui/core/Typography'
-// import Button from '@material-ui/core/Button'
-// import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
-// import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
+import Button from '@material-ui/core/Button'
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import SwipeableViews from 'react-swipeable-views'
 // import { autoPlay } from 'react-swipeable-views-utils'
-import Paper from '@material-ui/core/Paper'
 import CarouselSlides from '../Carousel/CarouselSlides'
 // import { Box } from 'rebass'
 
@@ -52,6 +49,14 @@ const styles = theme => ({
     tester: {
         display: 'block',
         zIndex: 25,
+    },
+    mobileStepper: {
+        margin: '1em'
+    },
+    button: {
+        margin: theme.spacing.unit,
+                zIndex: 25,
+
     }
 });
 
@@ -79,13 +84,10 @@ class Carousel extends React.Component {
     render() {
         const { classes, theme } = this.props;
         const { activeSlide } = this.state;
-        // const maxSlides = carouselSlides.length;
+        const maxSlides = carouselSlides.length;
 
         return (
             <div className={classes.root}>
-                <Paper square elevation={0} className={classes.header}>
-                    <Typography>{carouselSlides[activeSlide].name}</Typography>
-                </Paper>
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={activeSlide}
@@ -100,6 +102,14 @@ class Carousel extends React.Component {
                         </div>
                     ))}
                 </SwipeableViews>
+                <Button size="large" onClick={this.prevSlide} disabled={activeSlide === 0}>
+                    {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+                    Back
+                </Button>
+                <Button size="large" onClick={this.nextSlide} disabled={activeSlide === maxSlides - 1}>
+                    Next
+                    {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+                </Button>
             </div>
         )
     }

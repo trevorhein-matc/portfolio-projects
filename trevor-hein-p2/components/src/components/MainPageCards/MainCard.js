@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Text } from 'rebass'
+import { Card } from 'rebass'
 import MainCardImage from '../MainPageCards/MainCardImage'
 import MainCardHeading from '../MainPageCards/MainCardHeading'
 import MainCardText from '../MainPageCards/MainCardText'

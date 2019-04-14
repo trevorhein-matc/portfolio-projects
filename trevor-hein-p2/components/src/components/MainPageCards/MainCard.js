@@ -2,7 +2,9 @@ import React from 'react'
 import { Card, Text } from 'rebass'
 import MainCardImage from '../MainPageCards/MainCardImage'
 import MainCardHeading from '../MainPageCards/MainCardHeading'
+import MainCardText from '../MainPageCards/MainCardText'
 import CardActionArea from "@material-ui/core/CardActionArea"
+import Divider from "@material-ui/core/Divider";
 
 class MainCard extends React.Component {
 
@@ -25,6 +27,10 @@ class MainCard extends React.Component {
                     <MainCardHeading>
                         {data.title}
                     </MainCardHeading>
+                    <Divider />
+                    <MainCardText>
+                        {data.title}
+                    </MainCardText>
                 </CardActionArea>
             </Card>
         )

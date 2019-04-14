@@ -4,8 +4,9 @@ import HeadingBase from '../Heading/HeadingBase'
 const MainCardHeading = props => (
     <HeadingBase
         as='h1'
-        p='.5em'
-        fontSize={[3, 3, 5]}
+        mx='.5em'
+        py={1}
+        fontSize={[5, 5, 6]}
         fontFamily='roboto'
         textAlign='left'
         {...props}

@@ -12,7 +12,7 @@ class MainCardImage extends React.Component {
                 my={0}
                 width={[1]}
                 borderRadius={8}
-                height={200}
+                height={[250, 200, 300]}
             />
         )
     }

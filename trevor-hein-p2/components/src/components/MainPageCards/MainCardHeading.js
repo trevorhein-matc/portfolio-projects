@@ -1,13 +1,13 @@
 import React from 'react'
 import HeadingBase from '../Heading/HeadingBase'
 
-
 const MainCardHeading = props => (
     <HeadingBase
         as='h1'
-        fontSize={[1, 1, 1]}
+        p='.5em'
+        fontSize={[3, 3, 5]}
         fontFamily='roboto'
-        textAlign='center'
+        textAlign='left'
         {...props}
     />
 )

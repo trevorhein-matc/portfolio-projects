@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from '../layouts/layout'
 import Carousel from "../components/Carousel/Carousel"
-import MainPageCards from "../components/MainPageCards/MainPageCards"
+import MainPageCardDeck from "../components/MainPageCards/MainPageCardDeck"
 
 const IndexPage = () => (
   <Layout>
     <Carousel />
-    <MainPageCards />
+    <MainPageCardDeck />
   </Layout>
 )
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Text } from 'rebass'
 import MainCardImage from '../MainPageCards/MainCardImage'
+import MainCardHeading from '../MainPageCards/MainCardHeading'
 
 class MainCard extends React.Component {
 
@@ -18,10 +19,10 @@ class MainCard extends React.Component {
                 borderRadius={8}
                 boxShadow='0 15px 16px rgba(0, 0, 0, 0.25)'
             >
-            <MainCardImage data={data} />
-            <Text>
-                {data.title}
-            </Text>
+                <MainCardImage data={data} />
+                <MainCardHeading>
+                    {data.title}
+                </MainCardHeading>
             </Card>
         )
     }

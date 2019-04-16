@@ -5,33 +5,20 @@ import Button from '@material-ui/core/Button'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import SwipeableViews from 'react-swipeable-views'
-// import { autoPlay } from 'react-swipeable-views-utils'
 import CarouselSlides from '../Carousel/CarouselSlides'
-// import { Box } from 'rebass'
-
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
 
 const carouselSlides = [
     {
-        name: 'carousel1',
-        title: 'Slide 1',
-        text: 'This is sample text for slide 1.'
+        name: 'carousel1'
     },
     {
-        name: 'carousel2',
-        title: 'Slide 2',
-        text: 'This is sample text for slide 2.'
+        name: 'carousel2'
     },
     {
-        name: 'carousel3',
-        title: 'Slide 3',
-        text: 'This is sample text for slide 3.'
+        name: 'carousel3'
     },
     {
-        name: 'carousel4',
-        title: 'Slide 4',
-        text: 'This is sample text for slide 4.'
+        name: 'carousel4'
     },
 ];
 
@@ -39,25 +26,6 @@ const styles = theme => ({
     root: {
         flexGrow:1,
     },
-    header: {
-        display: 'flex',
-        alignItems: 'center',
-        height: 50,
-        paddingLeft: theme.spacing.unit * 4,
-        backgroundColor: theme.palette.background.default,
-    },
-    tester: {
-        display: 'block',
-        zIndex: 25,
-    },
-    mobileStepper: {
-        margin: '1em'
-    },
-    button: {
-        margin: theme.spacing.unit,
-                zIndex: 25,
-
-    }
 });
 
 class Carousel extends React.Component {

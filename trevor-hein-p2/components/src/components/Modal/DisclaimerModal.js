@@ -1,5 +1,4 @@
 import React from 'react'
-// import { render } from 'react-dom'
 import Modal from 'react-responsive-modal'
 
 const styles = {
@@ -25,8 +24,8 @@ class DisclaimerModal extends React.Component {
         return (
             <div style={styles}>
                 <Modal open={open} onClose={this.onCloseModal} center>
-                    <h2>This is a Modal test</h2>
-                    <button onClick={this.onCloseModal}>Close Modal</button>
+                    <h2>Are you old enough to purchase cbd products?</h2>
+                    <button onClick={this.onCloseModal}>Of Legal Age</button>
                 </Modal>
             </div>
         )

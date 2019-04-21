@@ -1,3 +1,3 @@
-import Modal from './Modal'
+import DisclaimerModal from './DisclaimerModal'
 
-export default Modal
+export default DisclaimerModal

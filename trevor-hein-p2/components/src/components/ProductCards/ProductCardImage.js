@@ -8,10 +8,10 @@ class ProductCardImage extends React.Component {
         return (
             <ImageBase
                 src={data.img}
-                mb={-9}
-                width={[2/3]}
+                mb={-1.1}
+                width={[1/2, 2/3, 2/3]}
                 borderRadius={8}
-                height={[250, 200, 300]}
+                height={[125, 200, 300]}
             />
         )
     }

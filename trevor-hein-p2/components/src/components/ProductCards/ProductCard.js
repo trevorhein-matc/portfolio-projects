@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Flex } from 'rebass'
+import { Card, Flex, Box } from 'rebass'
 import ProductCardHeading from '../ProductCards/ProductCardHeading'
 import ProductCardText from '../ProductCards/ProductCardText'
 import ProductCardImage from '../ProductCards/ProductCardImage'
@@ -20,10 +20,20 @@ class ProductCard extends React.Component {
                 borderRadius={8}
                 boxShadow='0 15px 16px rgba(0, 0, 0, 0.25)'
             >
-
-                <ProductCardImage data={data}>
-
-                </ProductCardImage>
+                <Flex>
+                    <ProductCardImage data={data} />
+                    <Box
+                        width={[1/2, 1/3, 1/3]}
+                        bg='white'
+                    >
+                        <ProductCardHeading>
+                            {data.title}
+                        </ProductCardHeading>
+                        <ProductCardText>
+                            {data.desc}
+                        </ProductCardText>
+                    </Box>
+                </Flex>
             </Card>
         )
     }

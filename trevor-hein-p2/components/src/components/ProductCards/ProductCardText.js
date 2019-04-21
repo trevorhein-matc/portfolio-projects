@@ -3,9 +3,9 @@ import CustomTextBase from '../CustomText/CustomTextBase'
 
 const ProductCardText = props => (
     <CustomTextBase
-        fontSize={[3, 3, 3]}
+        fontSize={[2, 3, 3]}
         py={1}
-        mx={5}
+        mx={[2, 1, 3]}
         fontFamily='roboto'
         {...props}
     />

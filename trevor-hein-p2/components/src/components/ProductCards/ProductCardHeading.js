@@ -3,10 +3,10 @@ import HeadingBase from '../Heading/HeadingBase'
 
 const ProductCardHeading = props => (
     <HeadingBase
-        as='h1'
+        as='h2'
         mx='.5em'
         py={1}
-        fontSize={[5, 5, 6]}
+        fontSize={[3, 4, 5]}
         fontFamily='roboto'
         textAlign='left'
         {...props}

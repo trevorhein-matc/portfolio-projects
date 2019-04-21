@@ -32,6 +32,15 @@ class ProductCard extends React.Component {
                         <ProductCardText>
                             {data.desc}
                         </ProductCardText>
+                        <ProductCardText>
+                            Per Pack: {data.dosagePack}
+                        </ProductCardText>
+                        <ProductCardText>
+                            Per Serving: {data.dosagePerServ}
+                        </ProductCardText>
+                        <ProductCardText>
+                            Price: {data.price}
+                        </ProductCardText>
                     </Box>
                 </Flex>
             </Card>

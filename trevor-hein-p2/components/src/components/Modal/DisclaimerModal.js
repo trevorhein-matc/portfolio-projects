@@ -1,28 +1,32 @@
-import React, { Component } from 'react'
-import Modal from './Modal'
+import React from 'react'
+// import { render } from 'react-dom'
+import Modal from 'react-responsive-modal'
 
-class DisclaimerModal extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isOpen: true };
-    }
+const styles = {
+    fontFamily: "sans-serif",
+    textAlign: "center"
+};
 
-    toggleModal = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
+class DisclaimerModal extends React.Component {
+    state = {
+        open: true
+    };
+
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
 
     render() {
+        const { open } = this.state;
         return (
-            <div>
-                <button onClick={this.toggleModal}>
-                    Open the Modal
-                </button>
-
-                <Modal show={this.state.isOpen}
-                    onClose={this.toggleModal}>
-                    Are you of legal age to purchase these producst?
+            <div style={styles}>
+                <Modal open={open} onClose={this.onCloseModal} center>
+                    <h2>This is a Modal test</h2>
+                    <button onClick={this.onCloseModal}>Close Modal</button>
                 </Modal>
             </div>
         )
